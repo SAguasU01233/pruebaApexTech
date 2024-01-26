@@ -1,0 +1,39 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Sensor de Humo{% endblock %}
+<!--Inicio del block-->
+{% block body %}
+
+<div class="card" style="border-radius: 0px !important">
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12 mb-4">
+      <h3 class="text-center mt-5 mb-3">SENSOR DE HUMO DEL DATA BASE</h3>
+      <hr />
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <div class="table-responsive text-nowrap table-hover">
+        <table table-hover id="tbl_humo" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for humo in humoss %}
+            <tr id="{{ humo.id_humo }}">
+              <td>{{ humo.id_humo }}</td>
+              <td>{{ humo.fecha }}</td>
+              <td>{{ humo.valor }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
